@@ -11,7 +11,7 @@ namespace SecureWarningTriangle
     {
         public override string ID => "SecureWarningTriangle";
 
-        public override string Version => "v0.1";
+        public override string Version => "v0.1.1";
 
         public override string Author => "tommojphillips";
 
@@ -43,7 +43,7 @@ namespace SecureWarningTriangle
         {
             try
             {
-                if (!warningTrianglePart)
+                if (warningTrianglePart != null)
                     SaveLoad.SerializeSaveFile(this, warningTrianglePart.getSaveInfo(), FILE_NAME);
             }
             catch (Exception ex)
