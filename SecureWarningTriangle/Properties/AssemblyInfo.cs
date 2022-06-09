@@ -1,36 +1,37 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Resources;
 
-// General Information about an assembly is controlled through the following
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
+// General Information
 [assembly: AssemblyTitle("SecureWarningTriangle")]
+[assembly: AssemblyProduct("Secure Warning Triangle")]
 [assembly: AssemblyDescription("Secure the warning triangle to the satsumas trunk!")]
-[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tommo J. Productions")]
-[assembly: AssemblyProduct("SecureWarningTriangle v0.1.1")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright © Tommo J. Productions 2022")]
 [assembly: AssemblyTrademark("Azine")]
-[assembly: AssemblyCulture("")]
+[assembly: NeutralResourcesLanguage("en-AU")]
+[assembly: AssemblyConfiguration("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible
-// to COM components.  If you need to access a type in this assembly from
-// COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
+// Version information
+[assembly: AssemblyVersion("1.1.159.8")]
+//[assembly: AssemblyFileVersion("1.1.159.8")]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5b6103e6-1aff-417a-9491-82264b22ac21")]
+public class VersionInfo
+{
+	public const string lastestRelease = "09.06.2022 05:52 PM";
+	public const string version = "1.1.159.8";
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.1.0")]
-[assembly: AssemblyFileVersion("0.1.1.0")]
+    /// <summary>
+    /// Represents if the mod has been complied for x64
+    /// </summary>
+    #if x64
+        internal const bool IS_64_BIT = true;
+    #else
+        internal const bool IS_64_BIT = false;
+    #endif
+    #if DEBUG
+        internal const bool IS_DEBUG_CONFIG = true;
+    #else
+        internal const bool IS_DEBUG_CONFIG = false;
+    #endif
+}
+
